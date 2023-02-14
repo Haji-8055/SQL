@@ -39,15 +39,15 @@ select concat('xworkz','odc');
 select concat(carName,' : ',carBrand) as car_details from  CarInfo;
 
 -- Instr
+-- tells the position of char
 
 SELECT  instr('xworkzodc','r') as position;
-SELECT  instr(carName,'r'),carName from CarInfo;
+SELECT  instr(carName,'r'), carName from CarInfo;
 
 -- substr
 -- select substr('stringvalue'startposition,noofcharacters); --> syntax
 select substr('bangalore',3,5);
 select substr(carName,3,5),carName from CarInfo;
-
 
 -- DISTINCT: will return the unique values or avoid duplicate values;
 

@@ -58,7 +58,7 @@ insert into makeupset value(2,'ponds',2,11,6);
 
 
 
--- ************the above three contraints are called column level constraints*********************
+-- ************the above three constraints are called column level constraints*********************
 
 
 
