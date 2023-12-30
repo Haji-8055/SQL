@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <script type="text/javascript" src="data.js"></script>
+
+</head>
+
+
+<style>
+    .Topicss {
+        margin-top: -1rem;
+
+        display: none;
+
+    }
+
+    body::before {
+        content: "";
+
+        background-repeat: no-repeat, repeat;
+        background-image: url("https://www.x-workz.in/static/media/Logo.cf195593dc1b3f921369.png");
+        background-blend-mode: lighten;
+        background-color: black;
+
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.5;
+    }
+
+    table {
+
+        margin-top: -1rem;
+
+    }
+</style>
+
+<body>
+
+    <div class="Topicss w3-responsive w3-animate-left">
+        <h2 class="w3-center w3-blue">ONGOING BATCH STATUS</h2>
+
+        <table class="w3-table-all " id="table1">
+            <tr class="w3-orange">
+                <th>Batch</th>
+                <th>Trainer</th>
+                <th>Topic</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="Topicss w3-responsive w3-animate-left">
+        <h2 class="w3-center w3-blue">WEEKLY MOCK TEST</h2>
+
+        <table class="w3-table-all" id="table2">
+            <tr class="w3-orange">
+                <th>Batch</th>
+                <th>mock_spoc</th>
+                <th>Topic</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="Topicss w3-responsive w3-animate-left ">
+        <h2 class="w3-center w3-blue">UPCOMING BATCHES </h2>
+
+        <table class="w3-table-all" id="table3">
+            <tr class="w3-orange">
+                <th>BATCH</th>
+                <th>Trainer</th>
+                <th>location</th>
+            </tr>
+        </table>
+    </div>
+
+
+    <script>
+
+        var slideIndex = 0;
+
+        slides();
+
+        function slides() {
+
+            var i;
+            var x = document.getElementsByClassName("Topicss");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            };
+
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(slides, 4000);
+
+
+        }
+
+
+        batchList.forEach(element => {
+            const newRow = ` <tr class="w3-black">
+                <th>${element.batch}</th>
+                <th>${element.trainer}</th>
+                <th>${element.topic}</th>
+            </tr>   
+                    `;
+            document.querySelector("#table1").insertAdjacentHTML('beforeend', newRow);
+        });
+
+
+        weeklyMock.forEach(element => {
+            const newRow = ` <tr class="w3-black">
+                <th>${element.batch}</th>
+                <th>${element.mock_spoc}</th>
+                <th>${element.topic}</th>
+            </tr>   
+                    `;
+            document.querySelector("#table2").insertAdjacentHTML('beforeend', newRow);
+        });
+
+        upcomingBatch.forEach(element => {
+            const newRow = ` <tr class="w3-black">
+                <th>${element.batch}</th>
+                <th>${element.trainer}</th>
+                <th>${element.location}</th>
+            </tr>   
+                    `;
+            document.querySelector("#table3").insertAdjacentHTML('beforeend', newRow);
+        });
+    </script>
+
+</body>
+
+</html>
